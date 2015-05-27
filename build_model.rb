@@ -1,4 +1,5 @@
 ## Required Gems
+require( 'rinruby' )
 
 
 class Build_Model
@@ -7,6 +8,7 @@ class Build_Model
 
     ## Constant Variables
 
+    # For The Mac
     data_directory_name = '/Users/christopher/Documents/WMU_Classes/CS5950/CS5950-Machine_Learning/1.NewsGroups/Pre-Processed_Data'
 
 
@@ -58,6 +60,7 @@ class Build_Model
     #  ---------------------------------------------------------------------------------------------------------------------
 
 
+
     #  ---------------------------------------------------------------------------------------------------------------------
     #  ---------------------------------------------------------------------------------------------------------------------
     #  ---------------------------------------------------------------------------------------------------------------------
@@ -67,7 +70,38 @@ class Build_Model
     #####         Main Logic          #####
 
 
+  # Get the category names and the files that have been pre-processed.
+    data_directory = Dir.new(data_directory_name)
 
+    category_files = []
+    category_hashes = Hash.new()
+
+  data_directory.each_entry do |entry|
+    unless entry == '.' || entry == '..'
+      category_files << "#{entry.to_s}"
+      category_hashes[entry.to_s] = Hash.new()
+    end
+  end
+
+  category_files.each do |file_name|
+
+    temp = File.new("#{data_directory_name}/#{file_name}", 'r')
+    temp.each_line do |line|
+
+      words = line.split(',')
+      category_hashes[file_name][words[0]] = words[1].sub("\n", '').to_i
+    end
+    30.times {print "-"}
+    puts "\n Starting #{file_name}.\n"
+    puts category_hashes[file_name]
+  end
+
+
+  # Create Probability Lists for every word in Each Category
+
+  # Create Probability Lists for each Category overall
+
+  # Create Probability Lists for each word taken as a group (Without Categories)
 
 
 end

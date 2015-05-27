@@ -1,0 +1,2 @@
+class Test_Model
+end

@@ -1,0 +1,145 @@
+Program Run at 2015-05-27 18:59:16 -0400.
+Base Directory Specified as /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Changed working Directory to /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Created File named misc.forsale.csv. 
+	--Signed by Process: 5673.
+Finished writing misc.forsale.csv. 
+	--Signed by Process: 5673.
+Program Run at 2015-05-27 18:59:16 -0400.
+Base Directory Specified as /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Changed working Directory to /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Created File named comp.sys.mac.hardware.csv. 
+	--Signed by Process: 5678.
+Finished writing comp.sys.mac.hardware.csv. 
+	--Signed by Process: 5678.
+Program Run at 2015-05-27 18:59:16 -0400.
+Base Directory Specified as /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Changed working Directory to /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Created File named comp.os.ms-windows.misc.csv. 
+	--Signed by Process: 5658.
+Finished writing comp.os.ms-windows.misc.csv. 
+	--Signed by Process: 5658.
+Program Run at 2015-05-27 18:59:16 -0400.
+Base Directory Specified as /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Changed working Directory to /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Created File named sci.electronics.csv. 
+	--Signed by Process: 5688.
+Finished writing sci.electronics.csv. 
+	--Signed by Process: 5688.
+Program Run at 2015-05-27 18:59:16 -0400.
+Base Directory Specified as /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Changed working Directory to /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Created File named comp.sys.ibm.pc.hardware.csv. 
+	--Signed by Process: 5693.
+Finished writing comp.sys.ibm.pc.hardware.csv. 
+	--Signed by Process: 5693.
+Program Run at 2015-05-27 18:59:16 -0400.
+Base Directory Specified as /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Changed working Directory to /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Created File named rec.autos.csv. 
+	--Signed by Process: 5652.
+Finished writing rec.autos.csv. 
+	--Signed by Process: 5652.
+Program Run at 2015-05-27 18:59:16 -0400.
+Base Directory Specified as /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Changed working Directory to /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Created File named rec.motorcycles.csv. 
+	--Signed by Process: 5676.
+Finished writing rec.motorcycles.csv. 
+	--Signed by Process: 5676.
+Program Run at 2015-05-27 18:59:16 -0400.
+Base Directory Specified as /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Changed working Directory to /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Created File named rec.sport.baseball.csv. 
+	--Signed by Process: 5684.
+Finished writing rec.sport.baseball.csv. 
+	--Signed by Process: 5684.
+Program Run at 2015-05-27 18:59:16 -0400.
+Base Directory Specified as /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Changed working Directory to /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Created File named talk.religion.misc.csv. 
+	--Signed by Process: 5666.
+Finished writing talk.religion.misc.csv. 
+	--Signed by Process: 5666.
+Program Run at 2015-05-27 18:59:16 -0400.
+Base Directory Specified as /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Changed working Directory to /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Created File named comp.graphics.csv. 
+	--Signed by Process: 5669.
+Finished writing comp.graphics.csv. 
+	--Signed by Process: 5669.
+Program Run at 2015-05-27 18:59:16 -0400.
+Base Directory Specified as /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Changed working Directory to /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Created File named alt.atheism.csv. 
+	--Signed by Process: 5661.
+Finished writing alt.atheism.csv. 
+	--Signed by Process: 5661.
+Program Run at 2015-05-27 18:59:16 -0400.
+Base Directory Specified as /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Changed working Directory to /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Created File named rec.sport.hockey.csv. 
+	--Signed by Process: 5655.
+Finished writing rec.sport.hockey.csv. 
+	--Signed by Process: 5655.
+Program Run at 2015-05-27 18:59:16 -0400.
+Base Directory Specified as /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Changed working Directory to /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Created File named comp.windows.x.csv. 
+	--Signed by Process: 5705.
+Finished writing comp.windows.x.csv. 
+	--Signed by Process: 5705.
+Program Run at 2015-05-27 18:59:16 -0400.
+Base Directory Specified as /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Changed working Directory to /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Created File named sci.space.csv. 
+	--Signed by Process: 5697.
+Finished writing sci.space.csv. 
+	--Signed by Process: 5697.
+Program Run at 2015-05-27 18:59:16 -0400.
+Base Directory Specified as /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Changed working Directory to /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Created File named sci.med.csv. 
+	--Signed by Process: 5702.
+Finished writing sci.med.csv. 
+	--Signed by Process: 5702.
+Program Run at 2015-05-27 18:59:16 -0400.
+Base Directory Specified as /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Changed working Directory to /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Created File named talk.politics.guns.csv. 
+	--Signed by Process: 5682.
+Finished writing talk.politics.guns.csv. 
+	--Signed by Process: 5682.
+Program Run at 2015-05-27 18:59:16 -0400.
+Base Directory Specified as /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Changed working Directory to /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Created File named talk.politics.misc.csv. 
+	--Signed by Process: 5700.
+Finished writing talk.politics.misc.csv. 
+	--Signed by Process: 5700.
+Program Run at 2015-05-27 18:59:16 -0400.
+Base Directory Specified as /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Changed working Directory to /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Created File named soc.religion.christian.csv. 
+	--Signed by Process: 5691.
+Finished writing soc.religion.christian.csv. 
+	--Signed by Process: 5691.
+Program Run at 2015-05-27 18:59:16 -0400.
+Base Directory Specified as /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Changed working Directory to /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Created File named sci.crypt.csv. 
+	--Signed by Process: 5663.
+Finished writing sci.crypt.csv. 
+	--Signed by Process: 5663.
+Program Run at 2015-05-27 18:59:16 -0400.
+Base Directory Specified as /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Changed working Directory to /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Created File named talk.politics.mideast.csv. 
+	--Signed by Process: 5649.
+Finished writing talk.politics.mideast.csv. 
+	--Signed by Process: 5649.
+Program Run at 2015-05-27 18:59:16 -0400.
+Base Directory Specified as /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Changed working Directory to /home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train.
+Closing Log File.
+Total run time was 33.525597648 seconds or 0.5587599608 minutes.

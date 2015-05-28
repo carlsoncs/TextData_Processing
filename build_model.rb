@@ -8,7 +8,7 @@ class Build_Model
 
     ## Constant Variables
 
-    data_directory_name = '/Users/christopher/Documents/WMU_Classes/CS5950/CS5950-Machine_Learning/1.NewsGroups/Pre-Processed_Data'
+    data_directory_name = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Processed_Data'
 
 
     ## Methods/Functions

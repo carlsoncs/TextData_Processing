@@ -112,17 +112,19 @@ class Build_Model
       @category_overall_prob = Hash.new()
       @total_files = Float(0)
 
-      @raw_data_dir.each_entry do |file|
-        unless file.to_s == '.' || file.to_s == '..'
+      @category_names.each do |file|
+
           temp_dir = Dir.new("#{@@raw_data_directory_name}/#{file.to_s}")
           count = Integer(-2)
           temp_dir.each_entry do
             count += 1
-          end
-          @category_overall_prob[file.to_sym] = count
+
+          @category_overall_prob[file] = count
           @total_files += count
         end
       end
+
+
 
     end
 
@@ -146,7 +148,7 @@ class Build_Model
         end
       end
 
-      @category_overall_prob.each {|k,v| @category_overall_prob[k] = v/@total_files}
+
 
     end
 

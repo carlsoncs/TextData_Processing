@@ -7,14 +7,14 @@ class Test_Model
   ## Class Variables
 
   # For Lenovo
-  # @@test_data_location = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-test'
-  # @@results_file_location = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification'
+  @@test_data_location = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-test'
+  @@results_file_location = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification'
+
+
+  # # For Mac
+  # @@test_data_location = '/Users/christopher/Documents/WMU_Classes/CS5950/CS5950-Machine_Learning/1.NewsGroups/Data/20news-bydate-Test'
+  # @@results_file_location = '/Users/christopher/Documents/WMU_Classes/CS5950/CS5950-Machine_Learning/1.NewsGroups'
   #
-
-  # For Mac
-  @@test_data_location = '/Users/christopher/Documents/WMU_Classes/CS5950/CS5950-Machine_Learning/1.NewsGroups/Data/20news-bydate-Test'
-  @@results_file_location = '/Users/christopher/Documents/WMU_Classes/CS5950/CS5950-Machine_Learning/1.NewsGroups'
-
 
 
   def initialize
@@ -91,14 +91,15 @@ class Test_Model
         end
       end
 
+      ## Here is where the "math" takes place.
       category_names.each do |name|
         tprob = Float(1.0)
         category_hash = category_words_hash[name.to_sym]
         all_words.each do |key, value|
           if category_hash.has_key?(key.to_sym)
             tprob *= (value +1)
+            tprob /= ( 1+ overall_word_prob[key.to_sym])
             tprob *= (overall_category_prob[name] +1)
-            tprob *= (overall_word_prob[key.to_sym] +1)
           end
         end
 
@@ -130,17 +131,10 @@ class Test_Model
         confusion_matrix_hash[row_name][col_name] = Integer(0)
       end
     end
-    print "Progress: <0%"
-    21.times {print " "}
-    print "25%"
-    22.times {print " "}
-    print "50%"
-    22.times {print " "}
-    print "75%"
-    21.times {print " "}
-    print "100%>\n"
-    print "Progress: <"
-  counter = Integer(0)
+
+    print_progress_bar
+
+  counter = Integer(0)  # Used to track overall progress.
   @test_data_subdirs.each do |subdir|
 
     unless File.basename(subdir.path).to_s == '.' || File.basename(subdir.path).to_s == '..'
@@ -169,14 +163,46 @@ class Test_Model
     confusion_matrix_hash.each_key {|key| @results_file.write("#{key}, ")}
     @results_file.write("\n")
   confusion_matrix_hash.each do |key, value|
-    @results_file.write( "#{key} " )
+    @results_file.write( "#{key}, " )
     value.each do |key2, value2|
       @results_file.write "#{value2}, "
     end
     @results_file.write("\n\n\n")
   end
   @results_file.close
+
+    total_processed = Float(0)
+    total_correct = Float(0)
+    total_incorrect = Float(0)
+
+    confusion_matrix_hash.each_key do |key|
+      confusion_matrix_hash[key].each {|key2,value| total_processed += value}
+    end
+    confusion_matrix_hash.each_key do |key|
+      total_correct += confusion_matrix_hash[key][key]
+    end
+
+    total_incorrect = total_processed - total_correct
+
+    puts "Total: #{total_processed}\nTotal Correct: #{total_correct}\nTotal Incorrect: #{total_incorrect}\nPercent Correct: #{total_correct/total_processed}"
+
   end
 
+
+
+  private
+
+  def print_progress_bar
+    print "Progress: <0%"
+    21.times {print " "}
+    print "25%"
+    22.times {print " "}
+    print "50%"
+    22.times {print " "}
+    print "75%"
+    21.times {print " "}
+    print "100%>\n"
+    print "Progress: <"
+  end
 
 end

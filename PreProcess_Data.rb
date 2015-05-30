@@ -13,12 +13,12 @@ class PreProcessData
   ## Constant Variables
 
   # For Lenovo
-  # stopwords_file_name = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/TextData_Processing/Word_Count_Files/stopwords.txt'
-  # destination_directory_name = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Processed_Data'
-  #
+  stopwords_file_name = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/TextData_Processing/Word_Count_Files/stopwords.txt'
+  destination_directory_name = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Processed_Data'
+
   # For Macbook Air
-  stopwords_file_name = '/Users/christopher/RubymineProjects/Pre-Process_Text_Data/Word_Count_Files/stopwords.txt'
-  destination_directory_name = '/Users/christopher/Documents/WMU_Classes/CS5950/CS5950-Machine_Learning/1.NewsGroups/Processed_Data'
+  # stopwords_file_name = '/Users/christopher/RubymineProjects/Pre-Process_Text_Data/Word_Count_Files/stopwords.txt'
+  # destination_directory_name = '/Users/christopher/Documents/WMU_Classes/CS5950/CS5950-Machine_Learning/1.NewsGroups/Processed_Data'
 
   ## Methods/Functions
 
@@ -61,6 +61,7 @@ class PreProcessData
     stopwords_file = File.new(stopwords_file_name, 'r')
     stopwords_array = []
     stopwords_file.each_line() do |line|
+      line.strip!
       stopwords_array << line
     end
     stopwords_array
@@ -119,7 +120,7 @@ class PreProcessData
       Dir.chdir cat_dir
       puts "Beginning Traversal of #{Dir.pwd} files."
 
-
+      stopwords_array.each {|word| word.strip!}
       progress_counter = Integer(0)
 
       cat_dir.entries.each do |file|
@@ -139,11 +140,15 @@ class PreProcessData
               line.downcase!
               line.gsub!(/\A\p{Alnum}+\z/i, '')
 
-              words = strip_stopwords(line, stopwords_array)
+              words = line.split()
 
 
               words.each do |word|
                 unless word.length < 3 || word !~ /\A\p{Alnum}+\z/ || word.length > 20
+                  word.strip!
+
+                  next if stopwords_array.include?(word)
+
                   word = stem_word(word)
 
                   if words_hash.has_key?(word)

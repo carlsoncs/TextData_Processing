@@ -6,5 +6,7 @@ class Main_Controller
   tester = Test_Model.new()
 
   tester.run_full_test
+
+         puts "\n\n  USER\t\tSYSTEM\t\tTOTAL\t\tREAL"
        }
 end

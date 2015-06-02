@@ -13,12 +13,12 @@ class PreProcessData
   ## Constant Variables
 
   # For Lenovo
-  stopwords_file_name = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/TextData_Processing/Word_Count_Files/stopwords.txt'
-  destination_directory_name = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Processed_Data'
+  # stopwords_file_name = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/TextData_Processing/Word_Count_Files/stopwords.txt'
+  # destination_directory_name = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Processed_Data'
 
   # For Macbook Air
-  # stopwords_file_name = '/Users/christopher/RubymineProjects/Pre-Process_Text_Data/Word_Count_Files/stopwords.txt'
-  # destination_directory_name = '/Users/christopher/Documents/WMU_Classes/CS5950/CS5950-Machine_Learning/1.NewsGroups/Processed_Data'
+  stopwords_file_name = '/Users/christopher/RubymineProjects/Pre-Process_Text_Data/Word_Count_Files/stopwords.txt'
+  destination_directory_name = '/Users/christopher/Documents/WMU_Classes/CS5950/CS5950-Machine_Learning/1.NewsGroups/Processed_Data'
 
   ## Methods/Functions
 

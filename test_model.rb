@@ -6,15 +6,15 @@ class Test_Model
 
   ## Class Variables
 
-  # For Lenovo
-  @@test_data_location = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-test'
-  @@results_file_location = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification'
+  ## For Lenovo
+  # @@test_data_location = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-test'
+  # @@results_file_location = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification'
 
 
-  # # For Mac
-  # @@test_data_location = '/Users/christopher/Documents/WMU_Classes/CS5950/CS5950-Machine_Learning/1.NewsGroups/Data/20news-bydate-Test'
-  # @@results_file_location = '/Users/christopher/Documents/WMU_Classes/CS5950/CS5950-Machine_Learning/1.NewsGroups'
-  #
+  ## For Mac
+  @@test_data_location = '/Users/christopher/Documents/WMU_Classes/CS5950/CS5950-Machine_Learning/1.NewsGroups/Data/20news-bydate-Test'
+  @@results_file_location = '/Users/christopher/Documents/WMU_Classes/CS5950/CS5950-Machine_Learning/1.NewsGroups'
+
 
 
   def initialize
@@ -22,6 +22,10 @@ class Test_Model
     locate_and_load_test_data
     initialize_results_file
 
+  end
+
+  def self.run_on_macbook()
+    puts System.exec("`echo 'hello'`")
   end
 
   def locate_and_load_test_data
@@ -59,8 +63,8 @@ class Test_Model
 
       category_names = @model.instance_variable_get(:@category_names)
 
-      category_words_hash = @model.instance_variable_get(:@category_hashes)
-
+      category_word_prob_hash = @model.instance_variable_get(:@category_prob_hashes)
+      category_word_freq_hash = @model.instance_variable_get(:@category_freq_hashes)
       overall_category_prob = @model.instance_variable_get(:@category_overall_prob)
       total_category_files = Float(0)
       total_category_files += overall_category_prob.each_value.inject(0) {|result, value| result + value}
@@ -94,7 +98,7 @@ class Test_Model
       ## Here is where the "math" takes place.
       category_names.each do |name|
         tprob = Float(1.0)
-        category_hash = category_words_hash[name.to_sym]
+        category_hash = category_word_prob_hash[name.to_sym]
         all_words.each do |key, value|
           if category_hash.has_key?(key.to_sym)
             tprob *= (value +1)

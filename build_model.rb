@@ -11,13 +11,13 @@ class Build_Model
     ## Class Variables
 
     # For Lenovo
-    # @@raw_data_directory_name = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train'
-    # @@processed_data_directory_name = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Processed_Data'
+    @@raw_data_directory_name = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-train'
+    @@processed_data_directory_name = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Processed_Data'
 
 
     # For Mac
-    @@raw_data_directory_name = '/Users/christopher/Documents/WMU_Classes/CS5950/CS5950-Machine_Learning/1.NewsGroups/Data/20news-bydate-train'
-    @@processed_data_directory_name = '/Users/christopher/Documents/WMU_Classes/CS5950/CS5950-Machine_Learning/1.NewsGroups/Processed_Data'
+    # @@raw_data_directory_name = '/Users/christopher/Documents/WMU_Classes/CS5950/CS5950-Machine_Learning/1.NewsGroups/Data/20news-bydate-train'
+    # @@processed_data_directory_name = '/Users/christopher/Documents/WMU_Classes/CS5950/CS5950-Machine_Learning/1.NewsGroups/Processed_Data'
 
     ## Instance Variables
     @category_names
@@ -27,6 +27,7 @@ class Build_Model
     @category_overall_prob
     @overall_word_probability
     @overall_word_freq
+
     ## Methods/Functions
 
     def initialize
@@ -69,6 +70,8 @@ class Build_Model
 
       @category_prob_hashes = Hash.new()
       @category_freq_hashes = Hash.new()
+
+
       category_names.each do |name|
         @category_prob_hashes[name.to_sym] = Hash.new()
         @category_freq_hashes[name.to_sym] = Hash.new()

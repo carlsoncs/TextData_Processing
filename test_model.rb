@@ -7,13 +7,13 @@ class Test_Model
   ## Class Variables
 
   ## For Lenovo
-  # @@test_data_location = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-test'
-  # @@results_file_location = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification'
+  @@test_data_location = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Data/20news-bydate-test'
+  @@results_file_location = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification'
 
 
   ## For Mac
-  @@test_data_location = '/Users/christopher/Documents/WMU_Classes/CS5950/CS5950-Machine_Learning/1.NewsGroups/Data/20news-bydate-Test'
-  @@results_file_location = '/Users/christopher/Documents/WMU_Classes/CS5950/CS5950-Machine_Learning/1.NewsGroups'
+  # @@test_data_location = '/Users/christopher/Documents/WMU_Classes/CS5950/CS5950-Machine_Learning/1.NewsGroups/Data/20news-bydate-Test'
+  # @@results_file_location = '/Users/christopher/Documents/WMU_Classes/CS5950/CS5950-Machine_Learning/1.NewsGroups'
 
 
 
@@ -96,14 +96,63 @@ class Test_Model
       end
 
       ## Here is where the "math" takes place.
+
+      #               ** General Naive Bayes Classifier **
+      #
+      #   ^C = "The predicted Category" = max( p(Ck)*["The Running Product for each element in the document vector of"]P(xi|Ck) )
+      #           -- Because of problems with underflow this is modified to:
+      #
+      #       Bayes Thm Simple Form:
+      #
+      #         P(A|B) = ( P(A) * P(B|A) / P(B) )
+      #
+      #       Bays Thm Extended Form:
+      #
+      #         For a Partitioned Event Space "A" such that Ai is the ith event in A then, given some event B which is
+      #         informed by A we have:
+      #
+      #         P(B) = {SUM over all elements j}P(B|Aj)*P(Aj)
+      #
+      #           --We can also find the probability of Aj given B by:
+      #
+      #         P(Ai|B) = P(B|Ai)*P(Ai)/({SUM over all elements j} P(B|Aj)P(Aj))
+      #
+
+
+      #                 ** Term Frequency, Inverse Document Frequnecy **
+      #
+      # Will try using tf-idf here with Variables: tf and idf such that
+      #
+      #
+      #
+      #          tf(t,d) = f(t,d) = "The frequency of a term given a particular document"
+      #             --This will by modified to the following to account for the overall frequncy of some terms.
+      #          tf(t,d) = 0.5 + (0.5 * f(t,d)/ max( f(w,d):w E d ))
+      #             -- one half times the frequency of the word in the document divided by the frequency of the word
+      #             -- that appears most often in the documnet.  This helps account for document lengths in the train-
+      #             -- ing data.
+      #
+      #          idf(t,D) = log( N/ |{ d E D : t E d}|) == "log of the total number of documents divided by the number" +
+      #                                                     "of documents that contain the term"
+      #
+      #
+      #         tf-idf = tf(t,d) x idf(t,D)
+      #
+      #     ** Unfortunately I am not able to easily implement idf so I am only using tf.
+
+
+
+
       category_names.each do |name|
         tprob = Float(1.0)
+        tf = Float(0.0)
         category_hash = category_word_prob_hash[name.to_sym]
         all_words.each do |key, value|
           if category_hash.has_key?(key.to_sym)
-            tprob *= (value +1)
-            tprob /= ( 1+ overall_word_prob[key.to_sym])
-            tprob *= (overall_category_prob[name] +1)
+            tf = 0.5 + (0.5 * category_word_freq_hash[name.to_sym][key.to_sym])/category_word_freq_hash[name.to_sym].values.first
+            tprob *= (value * tf)
+            tprob /= ( 1 + overall_word_prob[key.to_sym])
+            tprob *= (overall_category_prob[name] + 1)
           end
         end
 

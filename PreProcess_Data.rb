@@ -4,7 +4,6 @@
 
 require( 'rubygems' )
 require( 'lingua/stemmer' )
-require( 'benchmark' )
 
 
 class PreProcessData
@@ -13,12 +12,12 @@ class PreProcessData
   ## Constant Variables
 
   # For Lenovo
-  # stopwords_file_name = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/TextData_Processing/Word_Count_Files/stopwords.txt'
-  # destination_directory_name = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Processed_Data'
+  stopwords_file_name = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/TextData_Processing/Word_Count_Files/stopwords.txt'
+  destination_directory_name = '/home/christopher/Documents/Programs/WMU_Assignments/CS5950-Machine_Learning/1.Classification/Processed_Data'
 
-  # For Macbook Air
-  stopwords_file_name = '/Users/christopher/RubymineProjects/Pre-Process_Text_Data/Word_Count_Files/stopwords.txt'
-  destination_directory_name = '/Users/christopher/Documents/WMU_Classes/CS5950/CS5950-Machine_Learning/1.NewsGroups/Processed_Data'
+  # # For Macbook Air
+  # stopwords_file_name = '/Users/christopher/RubymineProjects/Pre-Process_Text_Data/Word_Count_Files/stopwords.txt'
+  # destination_directory_name = '/Users/christopher/Documents/WMU_Classes/CS5950/CS5950-Machine_Learning/1.NewsGroups/Processed_Data'
 
   ## Methods/Functions
 
@@ -116,6 +115,8 @@ class PreProcessData
 
   def self.build_words_hash(cat_dir, stopwords_array,  log = File.new('log.txt', 'w+'))
 
+
+
       words_hash = Hash.new()
       Dir.chdir cat_dir
       puts "Beginning Traversal of #{Dir.pwd} files."
@@ -126,46 +127,48 @@ class PreProcessData
       cat_dir.entries.each do |file|
         progress_counter += 1
 
-        unless File.directory? file
+          unless File.directory? file
 
-          File.open(file, 'r') do |tmp_file|
-            #print "Opened #{file}."
-            #log.write("Opened #{file}.")
+            File.open(file, 'r') do |tmp_file|
+              #print "Opened #{file}."
+              #log.write("Opened #{file}.")
 
-            tmp_file.each_line do |line|
+              tmp_file.each_line do |line|
 
-              line = line.encode("UTF-8", :invalid => :replace, :undef => :replace, :replace => '')
-              line.strip!
-              line.sub!("\n", '')
-              line.downcase!
-              line.gsub!(/\A\p{Alnum}+\z/i, '')
+                line = line.encode("UTF-8", :invalid => :replace, :undef => :replace, :replace => '')
+                line.strip!
+                line.sub!("\n", '')
+                line.downcase!
+                line.gsub!(/\A\p{Alnum}+\z/i, '')
 
-              words = line.split()
+                words = line.split()
 
 
-              words.each do |word|
-                unless word.length < 3 || word !~ /\A\p{Alnum}+\z/ || word.length > 20
-                  word.strip!
+                words.each do |word|
+                  unless word.length < 3 || word !~ /\A\p{Alnum}+\z/ || word.length > 20
+                    word.strip!
 
-                  next if stopwords_array.include?(word)
+                    next if stopwords_array.include?(word)
 
-                  word = stem_word(word)
+                    word = stem_word(word)
 
-                  if words_hash.has_key?(word)
-                    words_hash[word] += 1
-                  else
-                    words_hash[word] = 1
+                    if words_hash.has_key?(word)
+                      words_hash[word] += 1
+                    else
+                      words_hash[word] = 1
+                    end
                   end
                 end
               end
+              tmp_file.close
             end
-            tmp_file.close
-          end
 
           if(progress_counter % 200 == 0 && progress_counter != 0)
             puts "Progress on #{cat_dir.path}: #{progress_counter} files processed.\n\t--signed, #{Process.pid}\n"
           end
-        end
+          end
+
+
       end
 
       puts "Completed Processing of #{cat_dir.path}.  #{progress_counter} files processed.\n\t--signed, #{Process.pid}\n"
